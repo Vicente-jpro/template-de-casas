@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CasasPro – Galeria de Imagens</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-main sticky-top">
+  <div class="container">
+    <a class="navbar-brand navbar-brand-logo" href="../../index.html">
+      <i class="bi bi-house-heart-fill me-1"></i>Casas<span>Pro</span>
+    </a>
+    <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <i class="bi bi-list fs-4"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="../../index.html"><i class="bi bi-grid me-1"></i>Listagem</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="create.html"><i class="bi bi-plus-circle me-1"></i>Publicar</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="../contact.html"><i class="bi bi-envelope me-1"></i>Contacto</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <a href="../auth/login.html" class="nav-link nav-link-custom"><i class="bi bi-person-circle me-1"></i>Entrar</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="detail-hero">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-custom">
+        <li class="breadcrumb-item"><a href="../../index.html"><i class="bi bi-house me-1"></i>Início</a></li>
+        <li class="breadcrumb-item"><a href="show.html">Moradia T3 em Benfica</a></li>
+        <li class="breadcrumb-item active">Galeria</li>
+      </ol>
+    </nav>
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mt-3">
+      <div>
+        <h1 class="fs-2"><i class="bi bi-images me-2"></i>Galeria de Imagens</h1>
+        <p class="opacity-75 mb-0">Moradia T3 com Jardim em Benfica — <span id="photoCount">10</span> fotos</p>
+      </div>
+      <div class="d-flex gap-2">
+        <a href="show.html" class="btn btn-outline-light btn-sm">
+          <i class="bi bi-arrow-left me-1"></i>Voltar
+        </a>
+        <a href="edit.html" class="btn btn-accent-cp btn-sm px-3 fw-bold">
+          <i class="bi bi-pencil me-1"></i>Editar
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY CONTENT -->
+<section class="py-5">
+  <div class="container">
+
+    <!-- Featured / Main Photo -->
+    <div class="mb-4">
+      <div class="photo-main">
+        <img id="galleryMain" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=85" alt="Foto principal" class="w-100" style="max-height:550px">
+      </div>
+      <div class="d-flex align-items-center justify-content-between mt-2">
+        <span class="text-muted small"><i class="bi bi-zoom-in me-1"></i>Clique numa miniatura para ampliar</span>
+        <button class="btn btn-sm btn-outline-secondary" id="downloadBtn">
+          <i class="bi bi-download me-1"></i>Descarregar
+        </button>
+      </div>
+    </div>
+
+    <!-- Thumbnail strip -->
+    <div class="row g-2 mb-5" id="thumbnailStrip"></div>
+
+    <!-- Masonry gallery section -->
+    <div class="mb-4">
+      <span class="section-badge"><i class="bi bi-images me-1"></i>Todas as Fotos</span>
+      <h2 class="section-title mt-1 mb-4">Galeria Completa</h2>
+    </div>
+
+    <div class="gallery-grid" id="masonryGallery"></div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL -->
+<div class="modal fade" id="lightboxModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark text-white border-0">
+      <div class="modal-header border-0 pb-0">
+        <h6 class="modal-title" id="lightboxTitle">Foto</h6>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center p-2">
+        <img id="lightboxImg" src="" alt="" class="img-fluid rounded" style="max-height:80vh">
+      </div>
+      <div class="modal-footer border-0 pt-0 justify-content-center gap-3">
+        <button class="btn btn-outline-light btn-sm" id="lbPrev"><i class="bi bi-chevron-left"></i> Anterior</button>
+        <button class="btn btn-outline-light btn-sm" id="lbNext">Próxima <i class="bi bi-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-main">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-2"><i class="bi bi-house-heart-fill me-1"></i>Casas<span>Pro</span></div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Imóveis</div>
+        <a href="../../index.html" class="footer-link">Listagem</a>
+        <a href="create.html" class="footer-link">Publicar</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Conta</div>
+        <a href="../auth/login.html" class="footer-link">Entrar</a>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">&copy; 2024 CasasPro. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<button id="backToTop" class="btn btn-primary-cp btn-sm position-fixed" style="bottom:1.5rem;right:1.5rem;opacity:0;z-index:999;border-radius:50%;width:42px;height:42px;transition:opacity .3s">
+  <i class="bi bi-chevron-up"></i>
+</button>
+<div id="toastContainer" class="toast-container-cp"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../js/app.js"></script>
+<script>
+/* ---- Gallery data (10 images) ---- */
+const galleryImages = [
+  { src:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=85', thumb:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=70', title:'Fachada Principal' },
+  { src:'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=85',   thumb:'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&q=70',   title:'Sala de Estar'  },
+  { src:'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=85', thumb:'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&q=70', title:'Quarto Principal' },
+  { src:'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=85', thumb:'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&q=70', title:'Vista Exterior'   },
+  { src:'https://images.unsplash.com/photo-1600607687939-ce8a6d3d4ab4?w=1200&q=85', thumb:'https://images.unsplash.com/photo-1600607687939-ce8a6d3d4ab4?w=400&q=70', title:'Cozinha'           },
+  { src:'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=85', thumb:'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=70', title:'Jardim'            },
+  { src:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=85', thumb:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&q=70', title:'Quarto 2'          },
+  { src:'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=85', thumb:'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=70', title:'Casa de Banho'    },
+  { src:'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=85', thumb:'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&q=70', title:'Varanda'           },
+  { src:'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1200&q=85', thumb:'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=400&q=70', title:'Sala de Jantar'   },
+];
+
+let currentIndex = 0;
+
+function setMainPhoto(index) {
+  currentIndex = index;
+  const img = galleryImages[index];
+  document.getElementById('galleryMain').src = img.src;
+  document.getElementById('galleryMain').alt = img.title;
+  document.querySelectorAll('.thumb-btn').forEach((t, i) => {
+    t.classList.toggle('border-primary', i === index);
+    t.style.opacity = i === index ? '1' : '0.65';
+  });
+}
+
+/* Thumbnails */
+const strip = document.getElementById('thumbnailStrip');
+galleryImages.forEach((img, i) => {
+  strip.insertAdjacentHTML('beforeend', `
+    <div class="col-4 col-sm-3 col-md-2 col-lg-1" style="min-width:90px">
+      <div class="photo-thumb thumb-btn" onclick="setMainPhoto(${i})" title="${img.title}">
+        <img src="${img.thumb}" alt="${img.title}" style="height:70px">
+        <div class="photo-thumb-overlay" style="opacity:0;transition:.2s">${img.title}</div>
+      </div>
+    </div>`);
+});
+
+/* Masonry gallery */
+const masonry = document.getElementById('masonryGallery');
+galleryImages.forEach((img, i) => {
+  masonry.insertAdjacentHTML('beforeend', `
+    <div class="gallery-item" data-gallery-src="${img.src}" data-gallery-title="${img.title}">
+      <img src="${img.thumb}" alt="${img.title}" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div>
+          <i class="bi bi-zoom-in me-1"></i><strong>${img.title}</strong>
+        </div>
+      </div>
+    </div>`);
+});
+
+setMainPhoto(0);
+
+/* Lightbox prev/next */
+document.getElementById('lbPrev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  const img = galleryImages[currentIndex];
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightboxTitle').textContent = img.title;
+});
+
+document.getElementById('lbNext').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  const img = galleryImages[currentIndex];
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightboxTitle').textContent = img.title;
+});
+
+/* Keyboard nav in lightbox */
+document.addEventListener('keydown', e => {
+  const modal = bootstrap.Modal.getInstance(document.getElementById('lightboxModal'));
+  if (!modal || !document.getElementById('lightboxModal').classList.contains('show')) return;
+  if (e.key === 'ArrowLeft')  document.getElementById('lbPrev').click();
+  if (e.key === 'ArrowRight') document.getElementById('lbNext').click();
+  if (e.key === 'Escape')     modal.hide();
+});
+</script>
+</body>
+</html>

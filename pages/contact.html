@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CasasPro – Contacto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-main sticky-top">
+  <div class="container">
+    <a class="navbar-brand navbar-brand-logo" href="../index.html">
+      <i class="bi bi-house-heart-fill me-1"></i>Casas<span>Pro</span>
+    </a>
+    <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <i class="bi bi-list fs-4"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="../index.html"><i class="bi bi-grid me-1"></i>Listagem</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="house/create.html"><i class="bi bi-plus-circle me-1"></i>Publicar</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom active" href="contact.html"><i class="bi bi-envelope me-1"></i>Contacto</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <a href="auth/login.html" class="nav-link nav-link-custom"><i class="bi bi-person-circle me-1"></i>Entrar</a>
+        <a href="house/create.html" class="nav-link btn-nav-cta px-3"><i class="bi bi-plus me-1"></i>Anunciar</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <div class="container text-center">
+    <p class="section-badge" style="background:rgba(255,255,255,.15);color:#fff">
+      <i class="bi bi-envelope-heart me-1"></i>Fale Connosco
+    </p>
+    <h1 class="display-5 fw-bold mb-3">Estamos Aqui para Ajudar</h1>
+    <p class="lead opacity-80 mb-0">A nossa equipa responde em menos de 24 horas úteis.</p>
+  </div>
+</div>
+
+<!-- CONTACT INFO CARDS -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="contact-info-card text-center">
+          <div class="contact-icon mx-auto"><i class="bi bi-telephone-fill"></i></div>
+          <h5 class="fw-bold">Telefone</h5>
+          <p class="text-muted mb-2">Seg–Sex: 9h–18h</p>
+          <a href="tel:+351210000000" class="fw-semibold text-primary-cp">+351 21 000 0000</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-info-card text-center">
+          <div class="contact-icon mx-auto"><i class="bi bi-envelope-fill"></i></div>
+          <h5 class="fw-bold">Email</h5>
+          <p class="text-muted mb-2">Resposta em 24h</p>
+          <a href="mailto:info@casaspro.pt" class="fw-semibold text-primary-cp">info@casaspro.pt</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-info-card text-center">
+          <div class="contact-icon mx-auto"><i class="bi bi-geo-alt-fill"></i></div>
+          <h5 class="fw-bold">Escritório</h5>
+          <p class="text-muted mb-2">Visita com marcação</p>
+          <span class="fw-semibold text-primary-cp">Av. da Liberdade, 100 · Lisboa</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM + MAP -->
+    <div class="row g-5 align-items-start">
+
+      <!-- Form -->
+      <div class="col-lg-6">
+        <span class="section-badge"><i class="bi bi-chat-dots me-1"></i>Enviar Mensagem</span>
+        <h2 class="section-title mt-1 mb-4">Envie a sua Mensagem</h2>
+
+        <div class="form-card">
+          <form id="contactForm" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Nome <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="name" placeholder="O seu nome" required>
+                <div class="invalid-feedback">Campo Nome é obrigatório.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" name="email" placeholder="email@exemplo.com" required>
+                <div class="invalid-feedback">Email inválido.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Telefone</label>
+                <input type="tel" class="form-control" name="phone" placeholder="+351 9xx xxx xxx">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Assunto <span class="text-danger">*</span></label>
+                <select class="form-select" name="subject" required>
+                  <option value="">Seleccionar…</option>
+                  <option>Informação sobre imóvel</option>
+                  <option>Agendar visita</option>
+                  <option>Publicar anúncio</option>
+                  <option>Suporte técnico</option>
+                  <option>Outro</option>
+                </select>
+                <div class="invalid-feedback">Seleccione um assunto.</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Referência do Imóvel</label>
+                <input type="text" class="form-control" name="property_ref" placeholder="Ex: abc-123 (opcional)">
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Mensagem <span class="text-danger">*</span></label>
+                <textarea class="form-control" name="message" rows="5" placeholder="Descreva o que precisa…" required minlength="20"></textarea>
+                <div class="invalid-feedback">A mensagem precisa de ter pelo menos 20 caracteres.</div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                  <label class="form-check-label small" for="privacyCheck">
+                    Aceito a <a href="#" class="text-primary-cp">política de privacidade</a> e o tratamento dos meus dados. <span class="text-danger">*</span>
+                  </label>
+                  <div class="invalid-feedback">Deve aceitar a política de privacidade.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary-cp px-5 py-2 fw-bold w-100">
+                  <i class="bi bi-send me-2"></i>Enviar Mensagem
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Map + FAQ -->
+      <div class="col-lg-6">
+        <span class="section-badge"><i class="bi bi-geo me-1"></i>Onde Estamos</span>
+        <h2 class="section-title mt-1 mb-4">Localização</h2>
+        <div class="map-placeholder mb-4">
+          <div class="text-center">
+            <i class="bi bi-geo-alt-fill text-secondary-cp fs-1 d-block mb-2"></i>
+            <div class="fw-semibold">Av. da Liberdade, 100</div>
+            <div class="text-muted small">1250-145 Lisboa, Portugal</div>
+            <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary mt-3">
+              <i class="bi bi-box-arrow-up-right me-1"></i>Abrir no Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- FAQ accordion -->
+        <h5 class="fw-bold text-primary-cp mb-3"><i class="bi bi-question-circle me-2"></i>Perguntas Frequentes</h5>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item border-0 mb-2 rounded shadow-sm">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed rounded fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Como publicar um imóvel?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Aceda a <a href="house/create.html" class="text-primary-cp">Publicar Imóvel</a>, preencha o formulário e carregue as fotos. O seu anúncio ficará activo imediatamente.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 mb-2 rounded shadow-sm">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed rounded fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Quantas imagens posso adicionar?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Pode adicionar até <strong>10 imagens</strong> por imóvel, nos formatos PNG, JPG e WEBP.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 rounded shadow-sm">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed rounded fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Como editar ou apagar um anúncio?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Aceda ao detalhe do imóvel e clique em <strong>Editar</strong>. Para apagar, utilize o botão <strong>Eliminar</strong> na página de edição.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-main">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-3"><i class="bi bi-house-heart-fill me-1"></i>Casas<span>Pro</span></div>
+        <p style="font-size:.88rem; color:rgba(255,255,255,.6)">A plataforma mais completa para encontrar, publicar e gerir imóveis em Portugal.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Imóveis</div>
+        <a href="../index.html" class="footer-link">Listagem</a>
+        <a href="house/create.html" class="footer-link">Publicar</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Conta</div>
+        <a href="auth/login.html" class="footer-link">Entrar</a>
+        <a href="auth/reset-password.html" class="footer-link">Recuperar Senha</a>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">&copy; 2024 CasasPro. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<button id="backToTop" class="btn btn-primary-cp btn-sm position-fixed" style="bottom:1.5rem;right:1.5rem;opacity:0;z-index:999;border-radius:50%;width:42px;height:42px;transition:opacity .3s">
+  <i class="bi bi-chevron-up"></i>
+</button>
+<div id="toastContainer" class="toast-container-cp"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CasasPro – Detalhes do Imóvel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-main sticky-top">
+  <div class="container">
+    <a class="navbar-brand navbar-brand-logo" href="../../index.html">
+      <i class="bi bi-house-heart-fill me-1"></i>Casas<span>Pro</span>
+    </a>
+    <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <i class="bi bi-list fs-4"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="../../index.html"><i class="bi bi-grid me-1"></i>Listagem</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="create.html"><i class="bi bi-plus-circle me-1"></i>Publicar</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="../contact.html"><i class="bi bi-envelope me-1"></i>Contacto</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <a href="../auth/login.html" class="nav-link nav-link-custom"><i class="bi bi-person-circle me-1"></i>Entrar</a>
+        <a href="create.html" class="nav-link btn-nav-cta px-3"><i class="bi bi-plus me-1"></i>Anunciar</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- DETAIL HERO -->
+<div class="detail-hero">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-custom">
+        <li class="breadcrumb-item"><a href="../../index.html"><i class="bi bi-house me-1"></i>Início</a></li>
+        <li class="breadcrumb-item"><a href="../../index.html">Lisboa</a></li>
+        <li class="breadcrumb-item active">Moradia T3 em Benfica</li>
+      </ol>
+    </nav>
+    <div class="d-flex align-items-start justify-content-between flex-wrap gap-3 mt-3">
+      <div>
+        <h1 class="mb-1 fs-2">Moradia T3 com Jardim em Benfica</h1>
+        <p class="mb-0 opacity-75"><i class="bi bi-geo-alt me-1"></i>Rua das Flores, 42 – Benfica, Lisboa</p>
+      </div>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-light btn-sm wishlist-btn" data-bs-toggle="tooltip" title="Favorito">
+          <i class="bi bi-heart"></i>
+        </button>
+        <button class="btn btn-outline-light btn-sm" data-bs-toggle="tooltip" title="Partilhar">
+          <i class="bi bi-share"></i>
+        </button>
+        <a href="edit.html" class="btn btn-accent-cp btn-sm px-3 fw-bold">
+          <i class="bi bi-pencil me-1"></i>Editar
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- LEFT: Photos + Info -->
+      <div class="col-lg-8">
+
+        <!-- Photo gallery -->
+        <div class="photo-main mb-2">
+          <img id="mainPhoto" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&q=85" alt="Foto principal" class="w-100">
+        </div>
+        <div class="photo-thumb-grid">
+          <div class="photo-thumb" onclick="document.getElementById('mainPhoto').src=this.querySelector('img').src">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=300&q=80" alt="Foto 2">
+          </div>
+          <div class="photo-thumb" onclick="document.getElementById('mainPhoto').src=this.querySelector('img').src">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=300&q=80" alt="Foto 3">
+          </div>
+          <div class="photo-thumb" onclick="document.getElementById('mainPhoto').src=this.querySelector('img').src">
+            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=300&q=80" alt="Foto 4">
+          </div>
+          <div class="photo-thumb position-relative" onclick="window.location.href='gallery.html'">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6d3d4ab4?w=300&q=80" alt="Mais fotos">
+            <div class="photo-thumb-overlay">+6 fotos</div>
+          </div>
+        </div>
+        <div class="text-end mt-1">
+          <a href="gallery.html" class="btn btn-sm btn-outline-secondary">
+            <i class="bi bi-images me-1"></i>Ver todas as imagens (10)
+          </a>
+        </div>
+
+        <!-- Description -->
+        <div class="info-card mt-4">
+          <div class="info-card-title"><i class="bi bi-file-text me-2"></i>Descrição</div>
+          <p class="mb-0" style="line-height:1.8">
+            Esta deslumbrante moradia T3 está localizada numa das zonas mais tranquilas e bem servidas de Benfica, Lisboa.
+            Com acabamentos de alta qualidade, cozinha totalmente equipada e jardim privado, esta propriedade oferece todo o conforto
+            para uma família moderna. Próxima de transportes públicos, escolas e centros comerciais.
+            Não perca esta oportunidade única!
+          </p>
+        </div>
+
+        <!-- Key features (grid) -->
+        <div class="info-card mt-3">
+          <div class="info-card-title"><i class="bi bi-grid-3x3-gap me-2"></i>Características Principais</div>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <div class="text-center p-3 bg-light rounded">
+                <i class="bi bi-door-open fs-3 text-secondary-cp d-block mb-1"></i>
+                <div class="fw-bold">3 Quartos</div>
+                <div class="text-muted small">Tipologia T3</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="text-center p-3 bg-light rounded">
+                <i class="bi bi-droplet fs-3 text-secondary-cp d-block mb-1"></i>
+                <div class="fw-bold">2 WC</div>
+                <div class="text-muted small">Casa de Banho</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="text-center p-3 bg-light rounded">
+                <i class="bi bi-grid fs-3 text-secondary-cp d-block mb-1"></i>
+                <div class="fw-bold">120 m²</div>
+                <div class="text-muted small">Área Total</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="text-center p-3 bg-light rounded">
+                <i class="bi bi-utensils fs-3 text-secondary-cp d-block mb-1"></i>
+                <div class="fw-bold">1 Cozinha</div>
+                <div class="text-muted small">Equipada</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amenities -->
+        <div class="info-card mt-3">
+          <div class="info-card-title"><i class="bi bi-check-circle me-2"></i>Comodidades e Equipamentos</div>
+          <div class="d-flex flex-wrap">
+            <span class="feature-pill"><i class="bi bi-archive"></i>Mobilado</span>
+            <span class="feature-pill"><i class="bi bi-wifi"></i>Wi-Fi</span>
+            <span class="feature-pill"><i class="bi bi-wind"></i>Ar Condicionado</span>
+            <span class="feature-pill"><i class="bi bi-tv"></i>TV</span>
+            <span class="feature-pill"><i class="bi bi-tree"></i>Jardim</span>
+            <span class="feature-pill"><i class="bi bi-droplet-half"></i>Água Canalizada</span>
+            <span class="feature-pill"><i class="bi bi-lightning-charge"></i>Electricidade</span>
+            <span class="feature-pill"><i class="bi bi-cup-straw"></i>Cozinha Equipada</span>
+            <span class="feature-pill"><i class="bi bi-recycle"></i>Máq. de Lavar</span>
+            <span class="feature-pill"><i class="bi bi-droplet-fill"></i>Reservatório de Água</span>
+          </div>
+        </div>
+
+        <!-- Additional details -->
+        <div class="info-card mt-3">
+          <div class="info-card-title"><i class="bi bi-info-circle me-2"></i>Detalhes do Imóvel</div>
+          <div class="row g-2">
+            <div class="col-6 col-md-4">
+              <div class="d-flex align-items-center gap-2 p-2 border rounded">
+                <i class="bi bi-house text-secondary-cp fs-5"></i>
+                <div>
+                  <div class="text-muted small">Estado</div>
+                  <div class="fw-semibold small">Renovado</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="d-flex align-items-center gap-2 p-2 border rounded">
+                <i class="bi bi-currency-euro text-secondary-cp fs-5"></i>
+                <div>
+                  <div class="text-muted small">Negociação</div>
+                  <div class="fw-semibold small">Arrendamento</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="d-flex align-items-center gap-2 p-2 border rounded">
+                <i class="bi bi-calendar-check text-secondary-cp fs-5"></i>
+                <div>
+                  <div class="text-muted small">Publicado em</div>
+                  <div class="fw-semibold small">15 Jan 2024</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="d-flex align-items-center gap-2 p-2 border rounded">
+                <i class="bi bi-eye text-secondary-cp fs-5"></i>
+                <div>
+                  <div class="text-muted small">Visível</div>
+                  <div class="fw-semibold small">Sim</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="d-flex align-items-center gap-2 p-2 border rounded">
+                <i class="bi bi-check2-circle text-secondary-cp fs-5"></i>
+                <div>
+                  <div class="text-muted small">Disponibilidade</div>
+                  <div class="fw-semibold small text-success">Disponível</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="d-flex align-items-center gap-2 p-2 border rounded">
+                <i class="bi bi-megaphone text-secondary-cp fs-5"></i>
+                <div>
+                  <div class="text-muted small">Estado Anúncio</div>
+                  <div class="fw-semibold small">Activo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Price + Agent + Map -->
+      <div class="col-lg-4">
+
+        <!-- Price box -->
+        <div class="price-box mb-4">
+          <div class="price-label">Preço mensal</div>
+          <div class="price-value">2 800 €<small class="fs-5 fw-normal">/mês</small></div>
+          <div class="mt-2 opacity-75 small"><i class="bi bi-check-circle me-1"></i>Disponível para arrendamento imediato</div>
+          <div class="d-flex gap-2 mt-3">
+            <a href="../contact.html" class="btn btn-accent-cp fw-bold flex-fill">
+              <i class="bi bi-calendar-check me-1"></i>Agendar Visita
+            </a>
+          </div>
+        </div>
+
+        <!-- Agent -->
+        <div class="agent-card mb-4">
+          <div class="info-card-title"><i class="bi bi-person-badge me-2"></i>Agente Responsável</div>
+          <div class="d-flex gap-3 align-items-center">
+            <img src="https://i.pravatar.cc/100?img=11" alt="Agente" class="agent-avatar">
+            <div>
+              <div class="fw-bold">Ana Rodrigues</div>
+              <div class="text-muted small">Agente Certificada</div>
+              <div class="small mt-1"><i class="bi bi-star-fill text-warning me-1"></i>4.9 <span class="text-muted">(48 avaliações)</span></div>
+            </div>
+          </div>
+          <div class="mt-3 d-flex gap-2">
+            <a href="tel:+351910000000" class="btn btn-sm btn-outline-secondary flex-fill">
+              <i class="bi bi-telephone me-1"></i>Ligar
+            </a>
+            <a href="../contact.html" class="btn btn-sm btn-primary-cp flex-fill">
+              <i class="bi bi-envelope me-1"></i>Mensagem
+            </a>
+          </div>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="info-card">
+          <div class="info-card-title"><i class="bi bi-map me-2"></i>Localização</div>
+          <div class="map-placeholder mb-2">
+            <div class="text-center">
+              <i class="bi bi-geo-alt-fill text-secondary-cp fs-1 d-block mb-2"></i>
+              <div>Rua das Flores, 42</div>
+              <div class="text-muted small">Benfica, Lisboa</div>
+            </div>
+          </div>
+          <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary w-100">
+            <i class="bi bi-box-arrow-up-right me-1"></i>Ver no Google Maps
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-main">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-3"><i class="bi bi-house-heart-fill me-1"></i>Casas<span>Pro</span></div>
+        <p style="font-size:.88rem; color:rgba(255,255,255,.6)">A plataforma mais completa para encontrar, publicar e gerir imóveis em Portugal.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Imóveis</div>
+        <a href="../../index.html" class="footer-link">Listagem</a>
+        <a href="create.html" class="footer-link">Publicar</a>
+        <a href="gallery.html" class="footer-link">Galeria</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Conta</div>
+        <a href="../auth/login.html" class="footer-link">Entrar</a>
+        <a href="../auth/reset-password.html" class="footer-link">Recuperar Senha</a>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">&copy; 2024 CasasPro. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<button id="backToTop" class="btn btn-primary-cp btn-sm position-fixed" style="bottom:1.5rem;right:1.5rem;opacity:0;z-index:999;border-radius:50%;width:42px;height:42px;transition:opacity .3s" title="Voltar ao topo">
+  <i class="bi bi-chevron-up"></i>
+</button>
+<div id="toastContainer" class="toast-container-cp"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../js/app.js"></script>
+</body>
+</html>

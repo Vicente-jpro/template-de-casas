@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CasasPro – Publicar Imóvel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-main sticky-top">
+  <div class="container">
+    <a class="navbar-brand navbar-brand-logo" href="../../index.html">
+      <i class="bi bi-house-heart-fill me-1"></i>Casas<span>Pro</span>
+    </a>
+    <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <i class="bi bi-list fs-4"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="../../index.html"><i class="bi bi-grid me-1"></i>Listagem</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom active" href="create.html"><i class="bi bi-plus-circle me-1"></i>Publicar</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="../contact.html"><i class="bi bi-envelope me-1"></i>Contacto</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <a href="../auth/login.html" class="nav-link nav-link-custom"><i class="bi bi-person-circle me-1"></i>Entrar</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="detail-hero">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-custom">
+        <li class="breadcrumb-item"><a href="../../index.html"><i class="bi bi-house me-1"></i>Início</a></li>
+        <li class="breadcrumb-item active">Publicar Imóvel</li>
+      </ol>
+    </nav>
+    <h1 class="fs-2 mt-3"><i class="bi bi-plus-circle me-2"></i>Publicar Novo Imóvel</h1>
+    <p class="opacity-75 mb-0">Preencha o formulário abaixo para publicar o seu imóvel.</p>
+  </div>
+</div>
+
+<!-- FORM -->
+<section class="py-5">
+  <div class="container">
+    <form id="createHouseForm" novalidate>
+      <div class="row g-4">
+
+        <!-- LEFT / MAIN FIELDS -->
+        <div class="col-lg-8">
+
+          <!-- Basic Info -->
+          <div class="form-card mb-4">
+            <div class="form-section-title">Informação Básica</div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Título <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" name="title" placeholder="Ex: Moradia T3 com Jardim em Lisboa" required minlength="5">
+              <div class="invalid-feedback">Campo Título não pode estar em branco.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Descrição <span class="text-danger">*</span></label>
+              <textarea class="form-control" name="description" rows="5" placeholder="Descreva o imóvel com detalhes…" required minlength="20"></textarea>
+              <div class="invalid-feedback">Campo Descrição não pode estar em branco.</div>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Tipologia <span class="text-danger">*</span></label>
+                <select class="form-select" name="tipology" required>
+                  <option value="">Seleccionar…</option>
+                  <option value="T0">T0</option>
+                  <option value="T1">T1</option>
+                  <option value="T2">T2</option>
+                  <option value="T3">T3</option>
+                  <option value="T4">T4</option>
+                  <option value="T5">T5</option>
+                  <option value="T6_PLUS">T6+</option>
+                </select>
+                <div class="invalid-feedback">Campo Tipologia não pode estar em branco.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Tipo de Negociação <span class="text-danger">*</span></label>
+                <select class="form-select" name="type_negotiation" required>
+                  <option value="">Seleccionar…</option>
+                  <option value="SALE">Venda</option>
+                  <option value="RENT">Arrendamento</option>
+                  <option value="RENT_SALE">Venda/Arrendamento</option>
+                </select>
+                <div class="invalid-feedback">Campo Tipo de Negociação não pode estar em branco.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Details -->
+          <div class="form-card mb-4">
+            <div class="form-section-title">Detalhes do Imóvel</div>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Quartos</label>
+                <input type="number" class="form-control" name="number_of_rooms" min="0" max="20" placeholder="Ex: 3">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Casas de Banho</label>
+                <input type="number" class="form-control" name="bathroom" min="0" max="20" placeholder="Ex: 2">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Cozinhas</label>
+                <input type="number" class="form-control" name="kitchen" min="0" max="5" placeholder="Ex: 1">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Estado do Imóvel <span class="text-danger">*</span></label>
+                <select class="form-select" name="status_condition" required>
+                  <option value="">Seleccionar…</option>
+                  <option value="NEW">Novo</option>
+                  <option value="RENOVATED">Renovado</option>
+                  <option value="USED">Usado</option>
+                  <option value="UNDER_CONSTRUCTION">Em Construção</option>
+                </select>
+                <div class="invalid-feedback">Campo Condição do Imóvel não pode estar em branco.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Estado Anúncio</label>
+                <select class="form-select" name="status_post">
+                  <option value="ACTIVE">Activo</option>
+                  <option value="INACTIVE">Inactivo</option>
+                  <option value="SOLD">Vendido/Arrendado</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price & Availability -->
+          <div class="form-card mb-4">
+            <div class="form-section-title">Preço e Disponibilidade</div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Preço (€) <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-currency-euro"></i></span>
+                  <input type="number" class="form-control" name="price" step="0.01" min="0" placeholder="0.00" required>
+                  <div class="invalid-feedback">Campo Preço não pode estar em branco.</div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-end gap-3 flex-wrap pb-1">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" name="avaliable" id="avaliable" checked>
+                  <label class="form-check-label fw-semibold" for="avaliable">Disponível</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" name="visible" id="visible" checked>
+                  <label class="form-check-label fw-semibold" for="visible">Visível</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Amenities -->
+          <div class="form-card mb-4">
+            <div class="form-section-title">Comodidades e Equipamentos</div>
+            <div class="row g-2">
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="furnished" id="furnished">
+                  <label class="form-check-label" for="furnished"><i class="bi bi-archive me-1 text-secondary-cp"></i>Mobilado</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="equipped_kitchen" id="equippedKitchen">
+                  <label class="form-check-label" for="equippedKitchen"><i class="bi bi-cup-straw me-1 text-secondary-cp"></i>Cozinha Equipada</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="swimming_pool" id="swimmingPool">
+                  <label class="form-check-label" for="swimmingPool"><i class="bi bi-water me-1 text-secondary-cp"></i>Piscina</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="backyard" id="backyard">
+                  <label class="form-check-label" for="backyard"><i class="bi bi-tree me-1 text-secondary-cp"></i>Jardim/Quintal</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="wifi" id="wifi">
+                  <label class="form-check-label" for="wifi"><i class="bi bi-wifi me-1 text-secondary-cp"></i>Wi-Fi</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="air_conditioning" id="airConditioning">
+                  <label class="form-check-label" for="airConditioning"><i class="bi bi-wind me-1 text-secondary-cp"></i>Ar Condicionado</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="tv" id="tv">
+                  <label class="form-check-label" for="tv"><i class="bi bi-tv me-1 text-secondary-cp"></i>TV</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="washing_machine" id="washingMachine">
+                  <label class="form-check-label" for="washingMachine"><i class="bi bi-recycle me-1 text-secondary-cp"></i>Máq. de Lavar</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="furnished_room" id="furnishedRoom">
+                  <label class="form-check-label" for="furnishedRoom"><i class="bi bi-house-door me-1 text-secondary-cp"></i>Quarto Mobilado</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="running_water" id="runningWater">
+                  <label class="form-check-label" for="runningWater"><i class="bi bi-droplet-half me-1 text-secondary-cp"></i>Água Canalizada</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="water_tank" id="waterTank">
+                  <label class="form-check-label" for="waterTank"><i class="bi bi-droplet-fill me-1 text-secondary-cp"></i>Reservatório de Água</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="electricity" id="electricity">
+                  <label class="form-check-label" for="electricity"><i class="bi bi-lightning-charge me-1 text-secondary-cp"></i>Electricidade</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="form-card mb-4">
+            <div class="form-section-title">Morada / Endereço</div>
+            <div class="row g-3">
+              <div class="col-md-8">
+                <label class="form-label fw-semibold">Rua / Avenida <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="street" placeholder="Ex: Rua das Flores" required>
+                <div class="invalid-feedback">Campo Endereço não pode estar em branco.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Número</label>
+                <input type="text" class="form-control" name="number" placeholder="Ex: 42">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Cidade <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="city" placeholder="Ex: Lisboa" required>
+                <div class="invalid-feedback">Campo Cidade não pode estar em branco.</div>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-semibold">Distrito</label>
+                <input type="text" class="form-control" name="district" placeholder="Ex: Lisboa">
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-semibold">Código Postal</label>
+                <input type="text" class="form-control" name="postal_code" placeholder="0000-000" pattern="\d{4}-\d{3}">
+                <div class="invalid-feedback">Formato inválido (ex: 1000-001)</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">País</label>
+                <select class="form-select" name="country">
+                  <option value="PT" selected>Portugal</option>
+                  <option value="AO">Angola</option>
+                  <option value="MZ">Moçambique</option>
+                  <option value="BR">Brasil</option>
+                  <option value="CV">Cabo Verde</option>
+                  <option value="OTHER">Outro</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Bairro / Freguesia</label>
+                <input type="text" class="form-control" name="neighborhood" placeholder="Ex: Benfica">
+              </div>
+            </div>
+          </div>
+
+          <!-- Images Upload -->
+          <div class="form-card mb-4">
+            <div class="form-section-title">Imagens (máx. 10)</div>
+            <div class="upload-zone" id="uploadZone">
+              <i class="bi bi-cloud-upload d-block mb-2"></i>
+              <div class="fw-semibold">Clique ou arraste imagens aqui</div>
+              <div class="text-muted small mt-1">PNG, JPG, WEBP até 5MB cada — máximo 10 imagens</div>
+              <input type="file" id="imageInput" multiple accept="image/*" class="d-none">
+            </div>
+            <div id="imagePreview" class="upload-preview-grid"></div>
+          </div>
+
+          <!-- Actions -->
+          <div class="d-flex gap-3 justify-content-end flex-wrap">
+            <a href="../../index.html" class="btn btn-outline-secondary px-4">Cancelar</a>
+            <button type="submit" class="btn btn-primary-cp px-5 py-2 fw-bold">
+              <i class="bi bi-check-circle me-2"></i>Publicar Imóvel
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT: tips -->
+        <div class="col-lg-4">
+          <div class="form-card bg-light border-0 shadow-none position-sticky" style="top:5rem">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="contact-icon" style="width:40px;height:40px;font-size:1rem;flex-shrink:0">
+                <i class="bi bi-lightbulb"></i>
+              </div>
+              <div class="fw-bold text-primary-cp">Dicas para um bom anúncio</div>
+            </div>
+            <ul class="list-unstyled mb-0" style="font-size:.88rem">
+              <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Use fotos de alta qualidade (mín. 1200×800 px)</li>
+              <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Descreva todas as divisões e comodidades</li>
+              <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Indique preço competitivo de mercado</li>
+              <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Adicione pelo menos 5 fotos para mais visibilidade</li>
+              <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Preencha todos os campos para melhor posicionamento</li>
+            </ul>
+            <hr>
+            <div class="small text-muted">
+              <i class="bi bi-info-circle me-1"></i>
+              Campos assinalados com <span class="text-danger">*</span> são obrigatórios.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-main">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-2"><i class="bi bi-house-heart-fill me-1"></i>Casas<span>Pro</span></div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Imóveis</div>
+        <a href="../../index.html" class="footer-link">Listagem</a>
+        <a href="create.html" class="footer-link">Publicar</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Conta</div>
+        <a href="../auth/login.html" class="footer-link">Entrar</a>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">&copy; 2024 CasasPro. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<button id="backToTop" class="btn btn-primary-cp btn-sm position-fixed" style="bottom:1.5rem;right:1.5rem;opacity:0;z-index:999;border-radius:50%;width:42px;height:42px;transition:opacity .3s">
+  <i class="bi bi-chevron-up"></i>
+</button>
+<div id="toastContainer" class="toast-container-cp"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../js/app.js"></script>
+</body>
+</html>
