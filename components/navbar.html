@@ -1,4 +1,23 @@
-/* ============================================================
-   components/navbar.html
-   Shared navbar – loaded dynamically by app.js
-   ============================================================ */
+<!--
+  CasasPro – Shared Navbar Partial
+  Include this snippet inside a <nav> element or load via JS fetch/include.
+  Adjust href paths according to the page depth (e.g. ../../index.html).
+-->
+<a class="navbar-brand navbar-brand-logo" href="index.html">
+  <i class="bi bi-house-heart-fill me-1"></i>Casas<span>Pro</span>
+</a>
+<button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+  <i class="bi bi-list fs-4"></i>
+</button>
+<div class="collapse navbar-collapse" id="mainNav">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+    <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html"><i class="bi bi-grid me-1"></i>Listagem</a></li>
+    <li class="nav-item"><a class="nav-link nav-link-custom" href="pages/house/create.html"><i class="bi bi-plus-circle me-1"></i>Publicar</a></li>
+    <li class="nav-item"><a class="nav-link nav-link-custom" href="pages/contact.html"><i class="bi bi-envelope me-1"></i>Contacto</a></li>
+  </ul>
+  <div class="d-flex align-items-center gap-2">
+    <a href="pages/auth/login.html" class="nav-link nav-link-custom"><i class="bi bi-person-circle me-1"></i>Entrar</a>
+    <a href="pages/auth/logout.html" class="nav-link nav-link-custom"><i class="bi bi-box-arrow-right me-1"></i>Sair</a>
+    <a href="pages/house/create.html" class="nav-link btn-nav-cta px-3"><i class="bi bi-plus me-1"></i>Anunciar</a>
+  </div>
+</div>
