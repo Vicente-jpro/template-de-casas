@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CasasPro – House Card Component</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+</head>
+<body class="bg-light py-4">
+
+<!--
+  ┌──────────────────────────────────────────────────────────────────┐
+  │  HOUSE PARTIAL COMPONENT                                          │
+  │  Usage: include this card markup inside a col-* container.        │
+  │  Data attributes mirror the Java DTO fields.                      │
+  └──────────────────────────────────────────────────────────────────┘
+-->
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 mb-3">
+      <p class="text-muted small">
+        <i class="bi bi-info-circle me-1"></i>
+        Este ficheiro demonstra o componente de cartão de imóvel reutilizável (<strong>house-partial</strong>).
+        Inclua o bloco abaixo em qualquer grelha Bootstrap.
+      </p>
+    </div>
+
+    <!-- ========== HOUSE CARD COMPONENT START ========== -->
+    <!-- data-* attributes map to DTO fields -->
+    <div class="col-sm-8 col-md-6 col-lg-4"
+         data-house-id="abc-123"
+         data-title="Moradia T3 com Jardim"
+         data-price="2800"
+         data-type-negotiation="RENT"
+         data-tipology="T3"
+         data-number-of-rooms="3"
+         data-bathroom="2"
+         data-swimming-pool="false"
+         data-furnished="true"
+         data-wifi="true"
+         data-avaliable="true"
+         data-status-condition="RENOVATED"
+         data-status-post="ACTIVE">
+
+      <div class="house-card">
+        <!-- Image wrapper -->
+        <div class="house-card-img-wrapper">
+          <a href="show.html">
+            <img
+              src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80"
+              alt="Moradia T3 com Jardim"
+              loading="lazy">
+          </a>
+          <!-- Negotiation badge -->
+          <span class="house-card-badge badge-rent">Arrendamento</span>
+          <!-- Wishlist -->
+          <div class="house-card-wishlist wishlist-btn"
+               data-bs-toggle="tooltip"
+               title="Adicionar aos favoritos">
+            <i class="bi bi-heart" style="font-size:1rem"></i>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="house-card-body">
+          <!-- Price -->
+          <div class="house-card-price">2 800 €<span class="fs-6 fw-normal text-muted">/mês</span></div>
+          <!-- Title -->
+          <a href="show.html" class="house-card-title d-block">Moradia T3 com Jardim em Benfica</a>
+          <!-- Location -->
+          <div class="house-card-location">
+            <i class="bi bi-geo-alt-fill me-1"></i>Rua das Flores, 42 – Benfica, Lisboa
+          </div>
+          <!-- Divider -->
+          <div class="house-card-divider"></div>
+          <!-- Features row -->
+          <div class="d-flex gap-3 flex-wrap">
+            <span class="house-card-feature">
+              <i class="bi bi-door-open"></i>3 Quartos
+            </span>
+            <span class="house-card-feature">
+              <i class="bi bi-droplet"></i>2 WC
+            </span>
+            <span class="house-card-feature">
+              <i class="bi bi-arrows-fullscreen"></i>120 m²
+            </span>
+          </div>
+          <!-- Amenities pills (compact) -->
+          <div class="mt-2 d-flex flex-wrap gap-1">
+            <span class="badge text-bg-light border" style="font-size:.72rem">
+              <i class="bi bi-archive text-secondary-cp me-1"></i>Mobilado
+            </span>
+            <span class="badge text-bg-light border" style="font-size:.72rem">
+              <i class="bi bi-wifi text-secondary-cp me-1"></i>Wi-Fi
+            </span>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="house-card-footer">
+          <span class="badge badge-status badge-available">Disponível</span>
+          <div class="d-flex gap-2 align-items-center">
+            <span class="badge text-bg-secondary">Renovado</span>
+            <a href="show.html" class="btn btn-sm btn-primary-cp px-3">Ver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== HOUSE CARD COMPONENT END ========== -->
+
+    <!-- Variant: for sale -->
+    <div class="col-sm-8 col-md-6 col-lg-4">
+      <div class="house-card">
+        <div class="house-card-img-wrapper">
+          <a href="show.html">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Moradia à venda" loading="lazy">
+          </a>
+          <span class="house-card-badge badge-sell">Venda</span>
+          <div class="house-card-wishlist wishlist-btn" data-bs-toggle="tooltip" title="Adicionar aos favoritos">
+            <i class="bi bi-heart" style="font-size:1rem"></i>
+          </div>
+        </div>
+        <div class="house-card-body">
+          <div class="house-card-price">210 000 €</div>
+          <a href="show.html" class="house-card-title d-block">Moradia T4 – Coimbra</a>
+          <div class="house-card-location"><i class="bi bi-geo-alt-fill me-1"></i>Solum, Coimbra</div>
+          <div class="house-card-divider"></div>
+          <div class="d-flex gap-3 flex-wrap">
+            <span class="house-card-feature"><i class="bi bi-door-open"></i>4 Quartos</span>
+            <span class="house-card-feature"><i class="bi bi-droplet"></i>2 WC</span>
+            <span class="house-card-feature"><i class="bi bi-arrows-fullscreen"></i>175 m²</span>
+          </div>
+        </div>
+        <div class="house-card-footer">
+          <span class="badge badge-status badge-available">Disponível</span>
+          <div class="d-flex gap-2">
+            <a href="show.html" class="btn btn-sm btn-primary-cp px-3">Ver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Variant: unavailable -->
+    <div class="col-sm-8 col-md-6 col-lg-4">
+      <div class="house-card">
+        <div class="house-card-img-wrapper">
+          <a href="show.html">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80" alt="Estúdio T0" loading="lazy">
+          </a>
+          <span class="house-card-badge badge-rent">Arrendamento</span>
+          <div class="house-card-wishlist wishlist-btn">
+            <i class="bi bi-heart" style="font-size:1rem"></i>
+          </div>
+        </div>
+        <div class="house-card-body">
+          <div class="house-card-price">700 €<span class="fs-6 fw-normal text-muted">/mês</span></div>
+          <a href="show.html" class="house-card-title d-block">Estúdio Moderno T0 – Lisboa</a>
+          <div class="house-card-location"><i class="bi bi-geo-alt-fill me-1"></i>Intendente, Lisboa</div>
+          <div class="house-card-divider"></div>
+          <div class="d-flex gap-3 flex-wrap">
+            <span class="house-card-feature"><i class="bi bi-droplet"></i>1 WC</span>
+            <span class="house-card-feature"><i class="bi bi-arrows-fullscreen"></i>35 m²</span>
+          </div>
+        </div>
+        <div class="house-card-footer">
+          <span class="badge badge-status badge-unavailable">Indisponível</span>
+          <div class="d-flex gap-2">
+            <span class="badge text-bg-secondary">Mobilado</span>
+            <a href="show.html" class="btn btn-sm btn-primary-cp px-3">Ver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="toastContainer" class="toast-container-cp"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../js/app.js"></script>
+</body>
+</html>
